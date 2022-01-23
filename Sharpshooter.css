@@ -1,0 +1,61 @@
+canvas:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  canvas:-moz-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  canvas:-ms-fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  canvas:fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  audio {display:none}
+
+#canvas {
+    position: relative;
+    width: 50em;
+    max-width: 85%;
+    *zoom: 1;
+    margin: auto;
+    }
+
+#game {
+    margin: auto;
+    display: block;
+    border: 1px solid #ccc;
+    }
+#Player1 {
+    position: absolute;
+    right : 10px;
+    top : 35px;
+    font-style: bold ;
+    font-size: 1.5rem;
+}
+  
+#Player2 {
+    bottom : 35px;
+    right : 10px;
+    position: absolute;
+    font-style: bold ;
+    font-size: 1.5rem;
+}
+
+#btn {
+  text-align: center;
+  font-style: bold ;
+  font-family: sans-serif;
+  background-color: #6ac6e2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px;
+}
