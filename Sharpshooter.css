@@ -17,9 +17,10 @@ canvas:-webkit-full-screen {
   audio {display:none}
 
 #canvas {
+  display: inline;
+  width: 80%;
     position: relative;
     width: 50em;
-    max-width: 85%;
     *zoom: 1;
     margin: auto;
     }

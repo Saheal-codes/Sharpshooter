@@ -57,6 +57,7 @@ class Player {
                 ) {
                     player.health -= Math.floor(Math.random() * 5)
                     l.y = 1000
+                    document.getElementById("Player2").innerHTML = "Player 2 <br>Score = " + player.Score + "<br>Health = " + player.health
                 }
             }
             else {
@@ -72,6 +73,7 @@ class Player {
                 ) {
                     player.health -= Math.floor(Math.random() * 5)
                     l.y = -1000
+                    document.getElementById("Player1").innerHTML = "Player 1 <br>Score = " + player.Score + "<br>Health = " + player.health
                 }
             }
             context.fillRect(l.x, l.y, l.w, l.h)
@@ -101,6 +103,8 @@ class Game {
         attachevent(this.Player1, this.Player2)
         this.Player2.health = 100
         this.Player1.health = 100
+        document.getElementById("Player1").innerHTML = "Player 1 <br>Score = " + this.Player1.Score + "<br>Health = " + this.Player1.health
+        document.getElementById("Player2").innerHTML = "Player 2 <br>Score = " + this.Player2.Score + "<br>Health = " + this.Player2.health
         this.intervalID = setInterval(() => {
             drawbackground()
             this.Player1.draw()
@@ -115,16 +119,18 @@ class Game {
     checkGame() {
         var Gametext = document.getElementById("Gametext")
         if (this.Player1.health <= 0) {
+            this.Player1.health = 0
             Gametext.innerText = "Player 2 HAS WON THIS ROUND !"
             this.Player2.Score += 1
-            document.getElementById("Player2").innerHTML = "Player 2 <br>Score = " + this.Player2.Score
+            document.getElementById("Player2").innerHTML = "Player 2 <br>Score = " + this.Player2.Score + "<br>Health = " + this.Player2.health
             this.endgame()
         }
         if (this.Player2.health <= 0) {
+            this.Player2.health = 0
             Gametext.innerText = "Player 1 HAS WON ROUND !"
             this.Player1.Score += 1
-            document.getElementById("Player1").innerHTML = "Player 1 <br> Score = " + this.Player1.Score
-            this.endgame()          
+            document.getElementById("Player1").innerHTML = "Player 1 <br> Score = " + this.Player1.Score + "<br>Health = " + this.Player1.health
+            this.endgame()
         }
     }
     endgame() {
@@ -141,7 +147,7 @@ class Game {
             Gametext.innerText = "Player 1 HAS WON THE TOURNAMENT !"
         }
     }
-    resetGame(){
+    resetGame() {
         this.Rounds = 0
         this.gamerunning = false;
         this.Player1.Score = 0
