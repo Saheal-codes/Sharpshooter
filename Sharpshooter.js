@@ -140,11 +140,15 @@ class Game {
         this.gamerunning = false;
         this.Player1.lasers = []
         this.Player2.lasers = []
-        if (this.Player2.Score == 3) {
-            Gametext.innerText = "Player 2 HAS WON THE TOURNAMENT !"
+        if (this.Player2.Score === 3) {
+            alert("Player 2 HAS WON THE TOURNAMENT !")
+            this.resetGame()
+            // Gametext.innerText = "Player 2 HAS WON THE TOURNAMENT !"
         }
-        if (this.Player1.Score == 3) {
-            Gametext.innerText = "Player 1 HAS WON THE TOURNAMENT !"
+        if (this.Player1.Score === 3) {
+            alert("Player 1 HAS WON THE TOURNAMENT !")
+            this.resetGame()
+            // Gametext.innerText = "Player 1 HAS WON THE TOURNAMENT !"
         }
     }
     resetGame() {
